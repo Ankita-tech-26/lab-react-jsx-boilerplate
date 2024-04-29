@@ -1,36 +1,18 @@
+
+
 import React, { Component } from 'react';
 import './App.css';
-import elephant from "./images/elephant.jpeg";
-
-const imageData = () => {
-  let data = [
-    {
-      id: 1,
-      img: elephant
-    },
-    {
-      id: 2,
-      img: elephant
-    },
-    {
-      id: 3,
-      img: elephant
-    },
-    {
-      id: 4,
-      img: elephant
-    }
-  ]
-  return data;
-}
+import DataComponent from './Components/DataComponent'; 
 
 class AppClass extends Component {
   render() {
+    const data = DataComponent(); 
+
     return (
       <div className="App">
-        <h1>Image Gallery</h1>
+        <h1>Kalvium Gallery</h1>
         <div className="image-container">
-          {imageData().map(item => (
+          {data.map(item => (
             <img key={item.id} src={item.img} alt={`Image ${item.id}`} />
           ))}
         </div>
@@ -40,4 +22,3 @@ class AppClass extends Component {
 }
 
 export default AppClass;
-
